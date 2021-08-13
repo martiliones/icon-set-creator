@@ -1,0 +1,44 @@
+{
+  "name": "icon-set-creator",
+  "version": "0.1.0",
+  "description": "Icon Set Creator for React Native",
+  "main": "bin/iconset.js",
+  "bin": {
+    "iconset": "bin/iconset.js"
+  },
+  "engines": {
+    "node": "^12.0.0 || >= 14.0.0"
+  },
+  "scripts": {
+    "lint": "eslint bin lib utils"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martiliones/icon-set-creator.git"
+  },
+  "keywords": [
+    "react-native",
+    "icons",
+    "launcher"
+  ],
+  "author": "martiliones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martiliones/icon-set-creator/issues"
+  },
+  "homepage": "https://github.com/martiliones/icon-set-creator#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.1.0",
+    "leven": "^3.1.0",
+    "minimist": "^1.2.5",
+    "read-pkg": "^5.1.1",
+    "semver": "^7.3.5",
+    "sharp": "^0.28.3",
+    "strip-ansi": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.0"
+  }
+}
