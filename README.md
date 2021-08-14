@@ -14,7 +14,7 @@ $ npm install -g icon-set-creator
 $ yarn global add icon-set-creator
 ```
 
-After installation, you will have access to the vue binary in your command line. You can verify that it is properly installed by simply running `iconset`, which should present you with a help message listing all available commands.
+After installation, you will have access to the iconset binary in your command line. You can verify that it is properly installed by simply running `iconset`, which should present you with a help message listing all available commands.
 
 You can check you have the right version with this command:
 
