@@ -3,7 +3,15 @@
 <p align="center">
   <img src="assets/logo.svg" alt="logo" height="120">
 </p>
-<h1 align="center">Icon Set Creator</h1>
+<h1 align="center">
+Icon Set Creator
+
+<a href="https://www.npmjs.com/package/icon-set-creator" target="__blank"><img src="https://img.shields.io/npm/v/icon-set-creator?color=2B90B6&label=" alt="NPM version"></a>
+<a href="https://www.npmjs.com/package/icon-set-creator" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/icon-set-creator?color=349dbe&label="></a>
+<a href="https://github.com/martiliones/icon-set-creator" target="__blank"><img src="https://img.shields.io/github/license/martiliones/icon-set-creator.svg?label=&message=themes&color=45b8cd" alt="License"></a>
+<a href="https://medium.com/@martiliones/the-easiest-way-to-create-and-manage-app-icons-for-react-native-on-ios-and-android-41ccca39df2" target="__blank"><img src="https://img.shields.io/static/v1?label=&message=Guide&color=4ec5d4" alt="Guide"></a>
+<a href="https://github.com/martiliones/icon-set-creator" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/martiliones/icon-set-creator?style=social"></a>
+</h1>
 </header>
 
 To install the new package, use one of the following commands. You need administrator privileges to execute these unless npm was installed on your system through a Node.js version manager (e.g. n or nvm).
@@ -21,6 +29,8 @@ You can check you have the right version with this command:
 ```bash
 $ iconset --version
 ```
+
+For example, you can check the [`example`](https://github.com/martiliones/icon-set-creator/tree/master/example) folder and [this guide on Medium](https://medium.com/@martiliones/the-easiest-way-to-create-and-manage-app-icons-for-react-native-on-ios-and-android-41ccca39df2).
 
 ### iconset create
 
