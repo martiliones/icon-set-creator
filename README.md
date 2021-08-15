@@ -30,6 +30,8 @@ You can check you have the right version with this command:
 $ iconset --version
 ```
 
+For example, you can check the [`example`](https://github.com/martiliones/icon-set-creator/tree/master/example) folder and [this guide on Medium](https://medium.com/@martiliones/the-easiest-way-to-create-and-manage-app-icons-for-react-native-on-ios-and-android-41ccca39df2).
+
 ### iconset create
 
 ```bash
