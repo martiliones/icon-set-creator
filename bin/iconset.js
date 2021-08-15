@@ -48,11 +48,15 @@ program
 
 program
   .command('create [image-path]')
-  .description('generate a new icon set for React Native project')
-  .option('-A, --android [icon-name]', 'generate icon set for android')
-  .option('-I, --ios', 'generate icon set for ios')
+  .description('Generate a new icon set for React Native project')
+  
+  .option('-A, --android [icon-name]', 'Generate icon set for android')
+  .option('-IPA, --image-path-android', 'Image path for android')
   .option('-b, --adaptive-icon-background <background>', 'The color (E.g. "#ffffff") or image asset (E.g. "assets/images/christmas-background.png") which will be used to fill out the background of the adaptive icon.')
   .option('-f, --adaptive-icon-foreground <foreground>', 'The image asset which will be used for the icon foreground of the adaptive icon')
+  
+  .option('-I, --ios', 'Generate icon set for ios')
+  .option('-IPI, --image-path-ios', 'Image path for ios')
   .action((imagePath, options) => {
     if (minimist(process.argv.slice(3))._.length > 1) {
       console.log(chalk.yellow('\n Info: You provided more than one argument. The first one will be used as the source file, the rest are ignored.'));
