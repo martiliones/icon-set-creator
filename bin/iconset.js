@@ -49,12 +49,12 @@ program
 program
   .command('create [image-path]')
   .description('Generate a new icon set for React Native project')
-  
+
   .option('-A, --android [icon-name]', 'Generate icon set for android')
   .option('-IPA, --image-path-android', 'Image path for android')
   .option('-b, --adaptive-icon-background <background>', 'The color (E.g. "#ffffff") or image asset (E.g. "assets/images/christmas-background.png") which will be used to fill out the background of the adaptive icon.')
   .option('-f, --adaptive-icon-foreground <foreground>', 'The image asset which will be used for the icon foreground of the adaptive icon')
-  
+
   .option('-I, --ios', 'Generate icon set for ios')
   .option('-IPI, --image-path-ios', 'Image path for ios')
   .action((imagePath, options) => {
