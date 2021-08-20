@@ -1,7 +1,6 @@
-<br>
 <header>
 <p align="center">
-  <img src="assets/logo.svg" alt="logo" height="120">
+  <img src="assets/iphone.svg" alt="logo" width="400">
 </p>
 <h1 align="center">
 Icon Set Creator
