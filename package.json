@@ -10,7 +10,8 @@
     "node": "^12.0.0 || >= 14.0.0"
   },
   "scripts": {
-    "lint": "eslint bin lib utils"
+    "lint": "eslint bin lib utils",
+    "test:unit": "jest --verbose tests/unit --coverage"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,8 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.24.0"
+    "eslint-plugin-import": "^2.24.0",
+    "fs-extra": "^10.0.0",
+    "jest": "^27.0.6"
   }
 }
