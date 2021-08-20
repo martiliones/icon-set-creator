@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "npm run lint && npm run test:unit",
-    "test:unit": "jest --verbose tests/unit --coverage",
+    "test:unit": "jest --verbose tests/ --coverage --ci && codecov",
     "lint": "eslint bin lib utils"
   },
   "repository": {
@@ -40,6 +40,7 @@
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
+    "codecov": "^3.8.3",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.24.0",
     "fs-extra": "^10.0.0",
