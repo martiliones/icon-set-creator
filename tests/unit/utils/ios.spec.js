@@ -18,9 +18,15 @@ const projectTestName = 'ProjectTestName';
 const iconTestName = 'icon_test';
 
 test('Should get project name with directory', () => {
-  const dir = path.resolve(context, 'ios', projectTestName, 'Images.xcassets');
+  const projectDir = path.resolve(context, 'ios', projectTestName, 'Images.xcassets');
 
-  fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(projectDir, { recursive: true });
+
+  const xCodeDir = path.resolve(context, 'ios', `${projectTestName}.xcodeproj`);
+
+  fs.mkdirSync(xCodeDir, { recursive: true });
+
+  fs.writeFileSync(path.resolve(context, 'ios', `Podfile`), '');
 
   expect(getProjectName(context)).toBe(projectTestName);
 });
@@ -79,7 +85,6 @@ test('Should change icon in XCode config file', () => {
   const configFileDir = path.resolve(context, 'ios', `${projectTestName}.xcodeproj`);
   const configFile = path.resolve(configFileDir, 'project.pbxproj');
 
-  fs.mkdirSync(configFileDir);
   fs.writeFileSync(configFile, getConfigFile('AppIcon'));
 
   return changeIosLauncherIcon(iconTestName, context, projectTestName).then(() => {
