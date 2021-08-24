@@ -1,6 +1,6 @@
 {
   "name": "icon-set-creator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Icon Set Creator for React Native",
   "main": "bin/iconset.js",
   "bin": {
@@ -19,9 +19,10 @@
     "url": "git+https://github.com/martiliones/icon-set-creator.git"
   },
   "keywords": [
+    "cli",
+    "mobile",
     "react-native",
-    "icons",
-    "launcher"
+    "icons"
   ],
   "author": "martiliones",
   "license": "MIT",
