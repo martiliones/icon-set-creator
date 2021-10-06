@@ -21,6 +21,9 @@ Icon Set Creator
 - 📱 <b>iOS and Android support</b> — create icons for both platforms with one command
 
 <h2>🚀 Installation</h2>
+
+> ⚠️ You can skip this step and use `npx icon-set-creator` instead
+
 <h3>Global</h3>
 
 To install the new package **globally**, use one of the following commands. You need administrator privileges to execute these unless npm was installed on your system through a Node.js version manager (e.g. n or nvm).
@@ -51,9 +54,9 @@ $ yarn add icon-set-creator -D
 
 <h2>🧪 Usage</h2>
 
-The easiest way to use `icon-set-creator` is to specify the path to icon using `iconset create` command in root of your project:
+The easiest way to use `icon-set-creator` is to specify the path to icon using `npx icon-set-creator` command in root of your project:
 ```bash
-$ iconset create ./icon.png
+$ npx icon-set-creator create ./icon.png
 ```
 
 If you have the package installed locally, you can do same with the `package.json` script and then run it with `npm run create-appicon`:
