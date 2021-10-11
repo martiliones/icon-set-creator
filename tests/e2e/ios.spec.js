@@ -5,13 +5,10 @@ const { createIosIcons } = require('../../lib/utils/ios.js');
 
 const context = path.resolve(__dirname, 'test');
 
-<<<<<<< HEAD
-=======
 if (fs.existsSync(path.resolve(context, 'AppTestName'))) {
   fs.removeSync(path.resolve(context, 'AppTestName'));
 }
 
->>>>>>> dev
 test('Should create icons for iOS', async () => {
   const expected = [
     'Contents.json',
@@ -36,15 +33,9 @@ test('Should create icons for iOS', async () => {
 
   await createIosIcons(imagePath, true, null, context);
 
-<<<<<<< HEAD
-  const files = fs.readdirSync(path.resolve(context, 'ios', 'AppTestName', 'Images.xcassets', 'AppIcon.appiconset'));
-
-  console.log(files);
-=======
   const appIconSetDir = path.resolve(context, 'ios/AppTestName/Images.xcassets/AppIcon.appiconset');
 
   const files = fs.readdirSync(appIconSetDir);
->>>>>>> dev
 
   expect(files).toEqual(expect.arrayContaining(expected));
 });
