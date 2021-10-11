@@ -1,6 +1,6 @@
 {
   "name": "icon-set-creator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Icon Set Creator for React Native",
   "main": "bin/iconset.js",
   "bin": {

@@ -18,10 +18,6 @@ exports.info = (msg, tag = null) => {
   console.log(format(chalk.bgBlue.black(' INFO ') + (tag ? chalkTag(tag) : ''), msg));
 };
 
-exports.done = (msg, tag = null) => {
-  console.log(format(chalk.bgGreen.black(' DONE ') + (tag ? chalkTag(tag) : ''), msg));
-};
-
 exports.warn = (msg, tag = null) => {
   console.warn(format(chalk.bgYellow.black(' WARN ') + (tag ? chalkTag(tag) : ''), chalk.yellow(msg)));
 };
