@@ -6,10 +6,14 @@
 Icon Set Creator
 </h1>
 <p align="center">
+Android & iOS icon generator for React Native
+</p>
+<p align="center">
 <a href="https://www.npmjs.com/package/icon-set-creator" target="__blank"><img src="https://img.shields.io/npm/v/icon-set-creator?color=7DE1D1&label=" alt="NPM version"></a>
 <a href="https://www.npmjs.com/package/icon-set-creator" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/icon-set-creator?color=6AC704&label="></a>
 <a href="https://github.com/martiliones/icon-set-creator" target="__blank"><img src="https://img.shields.io/github/license/martiliones/icon-set-creator.svg?label=&message=themes&color=FFB706" alt="License"></a>
 <img src="https://img.shields.io/codecov/c/github/martiliones/icon-set-creator?color=FF4F4D&logoColor=FF4F4D" alt="Code Coverage">
+<br>
 <a href="https://github.com/martiliones/icon-set-creator" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/martiliones/icon-set-creator?style=social"></a>
 </p>
 </header>
@@ -21,6 +25,11 @@ Icon Set Creator
 - 📱 <b>iOS and Android support</b> — create icons for both platforms with one command
 
 <h2>🚀 Installation</h2>
+
+> **Node Version Requirement**
+>
+> Icon set creator requires Node.js version 14.0 or above (v16+ recommended). You can manage multiple versions of Node on the same machine with [n](https://github.com/tj/n), [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) .
+
 <h3>Global</h3>
 
 To install the new package **globally**, use one of the following commands. You need administrator privileges to execute these unless npm was installed on your system through a Node.js version manager (e.g. n or nvm).

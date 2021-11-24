@@ -1,14 +1,12 @@
 module.exports = {
   'env': {
     'commonjs': true,
-    'es2021': true,
-    'node': true
+    'node': true,
+    'es2020': true
   },
   'extends': 'eslint:recommended',
-  'parserOptions': {
-    'ecmaVersion': 12
-  },
   'rules': {
+    'no-trailing-spaces': 'error',
     'indent': [
       'error',
       2
