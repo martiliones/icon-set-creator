@@ -17,6 +17,6 @@ workflows:
   sample:
     jobs:
       - node/test:
-          version: '16.3'
+          version: '14.8'
       - codecov
           
