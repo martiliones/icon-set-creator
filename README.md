@@ -101,6 +101,7 @@ Generate a new icon set for React Native project
 Options:
   -A, --android [icon-name]                    Generate icon set for android
   -IPA, --image-path-android                   Image path for android
+  --flavor [flavor]                            Flavor name
   -b, --adaptive-icon-background <background>  The color (E.g. "#ffffff") or image asset (E.g. "assets/images/christmas-background.png") which will be used to fill
                                                out the background of the adaptive icon.
   -f, --adaptive-icon-foreground <foreground>  The image asset which will be used for the icon foreground of the adaptive icon
