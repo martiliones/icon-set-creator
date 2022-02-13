@@ -52,6 +52,7 @@ program
 
   .option('-A, --android [icon-name]', 'Generate icon set for android')
   .option('-IPA, --image-path-android', 'Image path for android')
+  .option('--flavor [flavor]', 'Flavor name')
   .option('-b, --adaptive-icon-background <background>', 'The color (E.g. "#ffffff") or image asset (E.g. "assets/images/christmas-background.png") which will be used to fill out the background of the adaptive icon.')
   .option('-f, --adaptive-icon-foreground <foreground>', 'The image asset which will be used for the icon foreground of the adaptive icon')
 
