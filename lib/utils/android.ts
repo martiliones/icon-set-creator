@@ -32,6 +32,10 @@ export const androidIcons: AndroidIcon[] = [
   { directoryName: 'mipmap-xxxhdpi', size: 192 },
 ];
 
+export const getRoundedCornersLayer = (size: number) => Buffer.from(
+  `<svg><rect x="0" y="0" width="${size}" height="${size}" rx="${Math.floor(size / 2)}" ry="${Math.floor(size / 2)}"/></svg>`
+);
+
 export const getIcLauncherXml = (iconName?: string) => `<?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
   <background android:drawable="@color/${iconName || 'ic_launcher'}_background"/>

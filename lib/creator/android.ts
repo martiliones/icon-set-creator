@@ -12,6 +12,7 @@ import {
   getIcLauncherDrawableBackgroundXml,
   getIcLauncherXml,
   getColorsXmlTemplate,
+  getRoundedCornersLayer,
   androidIcons,
   adaptiveAndroidIcons,
   androidManifestFile,
@@ -65,6 +66,7 @@ class AndroidIconCreator {
           const iconDirectory = path.resolve(androidResDirectory, androidIcon.directoryName);
 
           await this.saveIcon(image, iconDirectory, iconName, androidIcon);
+          await this.saveRoundedIcon(image, iconDirectory, iconName, androidIcon);
         }
 
         sharp(image)
@@ -109,6 +111,27 @@ class AndroidIconCreator {
 
         resolve();
       });
+    });
+  }
+
+  saveRoundedIcon(image: Buffer, iconDirectory: string, iconName: string, androidIcon: AndroidIcon) {
+    const roundIconName = `${iconName}_round`;
+    const { size } = androidIcon;
+
+    return new Promise((resolve, reject) => {
+      sharp(image)
+        .resize(size, size)
+        .composite([{
+          input: getRoundedCornersLayer(size),
+          blend: 'dest-in'
+        }])
+        .toFile(path.resolve(iconDirectory, `${roundIconName}.png`), (err, info) => {
+          if (err) {
+            return reject(err);
+          }
+
+          resolve(info);
+        });
     });
   }
 
@@ -298,6 +321,9 @@ class AndroidIconCreator {
         // result: any string which does only include escaped quotes
         return line.replace(/android:icon="[^"]*(\\"[^"]*)*"/g,
           `android:icon="@mipmap/${iconName}"`);
+      } else if (line.includes('android:roundIcon')) {
+        return line.replace(/android:icon="[^"]*(\\"[^"]*)*"/g,
+          `android:roundIcon="@mipmap/${iconName}_round"`);
       } else {
         return line;
       }
