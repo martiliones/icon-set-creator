@@ -6,6 +6,7 @@ import { warn, createDirectory } from '../../utils/index';
 
 import {
   iosDefaultIconName,
+  iosDefaultCatalogName,
   getIosDefaultIconFolder,
   getIosConfigFile,
   getIosAssetFolder,
@@ -40,8 +41,9 @@ class IOSIconCreator {
         if (err) {
           return reject(err);
         }
-  
-        let iconName, catalogName = 'AppIcon';
+
+        let iconName = iosDefaultIconName;
+        let catalogName = iosDefaultCatalogName;
 
         const { flavor, ios } = this.options;
 
@@ -52,8 +54,6 @@ class IOSIconCreator {
         } else if (typeof ios === 'string') {
           iconName = ios;
           catalogName = iconName;
-        } else {
-          iconName = iosDefaultIconName;
         }
 
         for (const iosIcon of iosIcons) {
@@ -67,7 +67,7 @@ class IOSIconCreator {
           );
         }
 
-        await this.changeIosLauncherIcon(iconName, projectName);
+        await this.changeIosLauncherIcon(catalogName, projectName);
 
         this.modifyContentsFile(catalogName, iconName, projectName);
 
@@ -121,50 +121,50 @@ class IOSIconCreator {
     });
   }
 
-  changeIosLauncherIcon(iconName: string, projectName: string): Promise<void> {
+  changeIosLauncherIcon(catalogName: string, projectName: string): Promise<void> {
     return new Promise((resolve, reject) => {
       const iOSconfigFile = path.resolve(this.context, getIosConfigFile(projectName));
-  
+
       fs.readFile(iOSconfigFile, 'utf-8', (err, config) => {
         if (err) {
           if (err.code === 'ENOENT') {
             warn('No project.pbxproj was found, icon can\'t be replaced in config file. Skipped');
-  
+
             return resolve();
           }
-  
+
           return reject(err);
         }
-  
+
         const lines = config.split('\n');
-  
+
         let currentConfig, onConfigurationSection = false;
-  
+
         for (let i = 0; i <= lines.length - 1; i++) {
           const line = lines[i];
-  
+
           if (line.includes('/* Begin XCBuildConfiguration section */')) {
             onConfigurationSection = true;
           }
-  
+
           if (line.includes('/* End XCBuildConfiguration section */')) {
             onConfigurationSection = false;
           }
-  
+
           if (onConfigurationSection) {
             const regex = /.*\/* (.*)\.xcconfig \*\/;/;
             const match = regex.exec(line);
-  
+
             if (match) {
               currentConfig = match[1];
             }
-  
+
             if (currentConfig && line.includes('ASSETCATALOG')) {
-              lines[i] = line.replace(/=(.*);/g, `= ${iconName};`);
+              lines[i] = line.replace(/=(.*);/g, `= ${catalogName};`);
             }
           }
         }
-  
+
         const entireFile = lines.join('\n');
         resolve(fs.writeFileSync(iOSconfigFile, entireFile));
       });

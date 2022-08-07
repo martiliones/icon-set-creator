@@ -4,6 +4,7 @@ export interface IosIcon {
 }
 
 export const iosDefaultIconName = 'Icon-App';
+export const iosDefaultCatalogName = 'AppIcon';
 
 export const getIosDefaultIconFolder = (projectName: string, flavor?: string) => (
   `ios/${projectName}/Images.xcassets/AppIcon${flavor?`-${flavor}`:''}.appiconset/`
