@@ -20,11 +20,22 @@ Android & iOS icon generator for React Native
 </p>
 </header>
 
-- 🌈 <b>Easy to install</b> — does not require additional programs
-- ⚡️ <b>Fast</b> — image manipulation powered by [sharp](https://www.npmjs.com/package/sharp)
+- 🌈 <b>Easy to install</b> — does not require additional software
+- ⚡️ <b>Fast</b> — image manipulation powered by [sharp](https://github.com/lovell/sharp)
 - 🛠 <b>Configurable</b> — using cli options or config file
-- 🌟 <b>Adaptive Icons</b> — support for color and image backgrounds
 - 📱 <b>iOS and Android support</b> — create icons for both platforms with one command
+- 🌟 <b>Adaptive Icons</b> — support for color and image backgrounds
+- 🟢 <b>Round Icons</b> — automatically generated for Android
+
+<h2>⚡️ Quick Start</h2>
+
+You can run the icon generator with the npx command (available in Node.js 8.2.0 and later).
+
+```bash
+$ npx icon-set-creator create ./path/to/icon.png
+```
+
+For earlier Node versions, see [🚀 Installation](#-installation) section below.
 
 <h2>🚀 Installation</h2>
 
