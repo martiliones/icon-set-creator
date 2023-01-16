@@ -44,7 +44,7 @@ const suggestCommands = (unknownCommand: string) => {
 };
 
 program
-  .version(`icon-set-creator ${require('../package').version}`)
+  .version(`icon-set-creator ${require('./package').version}`)
   .usage('<command> [options]');
 
 program
