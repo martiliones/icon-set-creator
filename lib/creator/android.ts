@@ -181,7 +181,7 @@ class AndroidIconCreator {
 
         let foundExisting = false;
 
-        for (let i = 0; i <= lines.length; i++) {
+        for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
 
           if (line.includes('name="ic_launcher_background"')) {
@@ -227,13 +227,14 @@ class AndroidIconCreator {
 
     return new Promise((resolve, reject) => {
       const iconName = typeof android === 'string'
-        ? `${android}.xml` : 'ic_launcher.xml';
+        ? android : 'ic_launcher';
+      const iconFileName = `${iconName}.xml`;
 
       const directory = path.resolve(this.context, getAndroidAdaptiveXmlFolder(flavor));
 
       createDirectory(directory);
 
-      fs.writeFile(path.resolve(directory, iconName), getIcLauncherXml(iconName), (err) => {
+      fs.writeFile(path.resolve(directory, iconFileName), getIcLauncherXml(iconName), (err) => {
         if (err) {
           return reject(err);
         }

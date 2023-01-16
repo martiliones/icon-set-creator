@@ -7,7 +7,7 @@ export const androidManifestFile = 'android/app/src/main/AndroidManifest.xml';
 
 export const getAndroidResDirectory = (flavor?: string) => `android/app/src/${flavor ?? 'main'}/res/`;
 export const getAndroidAdaptiveXmlFolder = (flavor?: string) => `${getAndroidResDirectory(flavor)}mipmap-anydpi-v26/`;
-export const getAndroidColorsFile = (flavor?: string) => `${getAndroidResDirectory(flavor)}res/values/colors.xml`;
+export const getAndroidColorsFile = (flavor?: string) => `${getAndroidResDirectory(flavor)}/values/colors.xml`;
 
 export const isAndroidIconNameCorrectFormat = (iconName: string) => {
   return /^[a-z0-9_]+$/.exec(iconName);
@@ -38,15 +38,15 @@ export const getRoundedCornersLayer = (size: number) => Buffer.from(
 
 export const getIcLauncherXml = (iconName?: string) => `<?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-  <background android:drawable="@color/${iconName || 'ic_launcher'}_background"/>
-  <foreground android:drawable="@drawable/${iconName || 'ic_launcher'}_foreground"/>
+    <background android:drawable="@color/${iconName || 'ic_launcher'}_background"/>
+    <foreground android:drawable="@drawable/${iconName || 'ic_launcher'}_foreground"/>
 </adaptive-icon>
 `;
 
 export const getIcLauncherDrawableBackgroundXml = (iconName?: string) => `<?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-  <background android:drawable="@drawable/${iconName || 'ic_launcher'}_background"/>
-  <foreground android:drawable="@drawable/${iconName || 'ic_launcher'}_foreground"/>
+    <background android:drawable="@drawable/${iconName || 'ic_launcher'}_background"/>
+    <foreground android:drawable="@drawable/${iconName || 'ic_launcher'}_foreground"/>
 </adaptive-icon>
 `;
 
