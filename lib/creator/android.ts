@@ -181,7 +181,7 @@ class AndroidIconCreator {
 
         let foundExisting = false;
 
-        for (let i = 0; i <= lines.length; i++) {
+        for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
 
           if (line.includes('name="ic_launcher_background"')) {
