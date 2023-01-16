@@ -60,7 +60,9 @@ export default class Creator {
 
     for (const prop of paths) {
       if (typeof options[prop] !== 'undefined') {
-        options[prop] = path.resolve(context, options[prop]!);
+        if (!options[prop]!.match(/^#[0-9A-Za-z]{6}$/)) {
+          options[prop] = path.resolve(context, options[prop]!);
+        }
       }
     }
   }
