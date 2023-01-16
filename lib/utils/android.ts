@@ -7,7 +7,7 @@ export const androidManifestFile = 'android/app/src/main/AndroidManifest.xml';
 
 export const getAndroidResDirectory = (flavor?: string) => `android/app/src/${flavor ?? 'main'}/res/`;
 export const getAndroidAdaptiveXmlFolder = (flavor?: string) => `${getAndroidResDirectory(flavor)}mipmap-anydpi-v26/`;
-export const getAndroidColorsFile = (flavor?: string) => `${getAndroidResDirectory(flavor)}res/values/colors.xml`;
+export const getAndroidColorsFile = (flavor?: string) => `${getAndroidResDirectory(flavor)}/values/colors.xml`;
 
 export const isAndroidIconNameCorrectFormat = (iconName: string) => {
   return /^[a-z0-9_]+$/.exec(iconName);
