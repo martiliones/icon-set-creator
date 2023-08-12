@@ -2,6 +2,7 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
