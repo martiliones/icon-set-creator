@@ -1,10 +1,10 @@
 {
   "name": "icon-set-creator",
-  "version": "1.0.0",
-  "description": "Android & iOS icon generator for React Native ",
-  "main": "dist/index.js",
+  "version": "1.1.5",
+  "description": "Android & iOS icon generator for React Native",
+  "main": "index.js",
   "bin": {
-    "iconset": "dist/index.js"
+    "iconset": "index.js"
   },
   "author": "martiliones",
   "license": "MIT",
