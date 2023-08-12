@@ -159,7 +159,7 @@ class IOSIconCreator {
               currentConfig = match[1];
             }
 
-            if (currentConfig && line.includes('ASSETCATALOG')) {
+            if (currentConfig && line.includes('ASSETCATALOG_COMPILER_APPICON_NAME')) {
               lines[i] = line.replace(/=(.*);/g, `= ${catalogName};`);
             }
           }
