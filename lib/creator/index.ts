@@ -13,6 +13,8 @@ interface creatorOptions {
   flavor?: string;
   adaptiveIconBackground?: string;
   adaptiveIconForeground?: string;
+  group?: string;
+  disableChangeIcon?: boolean;
 };
 
 export default class Creator {
@@ -101,6 +103,8 @@ export default class Creator {
       const iOSIconCreator = new IOSIconCreator(context, {
         ios: options.ios,
         flavor: options.flavor,
+		group: options.group,
+		disableChangeIcon: options.disableChangeIcon,
       });
 
       const imagePathIos = options.imagePathIos || options.imagePath;

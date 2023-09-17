@@ -18,6 +18,8 @@ import {
 interface IOSCreatorOptions {
   ios?: boolean | string;
   flavor?: string;
+  group?: string;
+  disableChangeIcon?: boolean;
 }
 
 class IOSIconCreator {
@@ -67,7 +69,9 @@ class IOSIconCreator {
           );
         }
 
-        await this.changeIosLauncherIcon(catalogName, projectName);
+		if (!this.options.disableChangeIcon) {
+			await this.changeIosLauncherIcon(catalogName, projectName);
+		} 
 
         this.modifyContentsFile(catalogName, iconName, projectName);
 
@@ -77,6 +81,10 @@ class IOSIconCreator {
   }
 
   getIosProjectName() {
+	if (this.options.group) {
+	  return this.options.group;
+	}
+
     const appFilePath = path.resolve(this.context, 'app.json');
 
     if (fs.existsSync(appFilePath)) {
