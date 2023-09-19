@@ -19,7 +19,7 @@ interface IOSCreatorOptions {
   ios?: boolean | string;
   flavor?: string;
   group?: string;
-  disableChangeIcon?: boolean;
+  disableLauncherIcon?: boolean;
 }
 
 class IOSIconCreator {
@@ -47,7 +47,7 @@ class IOSIconCreator {
         let iconName = iosDefaultIconName;
         let catalogName = iosDefaultCatalogName;
 
-        const { flavor, ios } = this.options;
+        const { flavor, ios, disableLauncherIcon } = this.options;
 
         if (flavor) {
           catalogName = `AppIcon-${flavor}`;
@@ -69,9 +69,9 @@ class IOSIconCreator {
           );
         }
 
-		if (!this.options.disableChangeIcon) {
-			await this.changeIosLauncherIcon(catalogName, projectName);
-		} 
+        if (!disableLauncherIcon) {
+          await this.changeIosLauncherIcon(catalogName, projectName);
+        }
 
         this.modifyContentsFile(catalogName, iconName, projectName);
 
@@ -81,9 +81,11 @@ class IOSIconCreator {
   }
 
   getIosProjectName() {
-	if (this.options.group) {
-	  return this.options.group;
-	}
+    const { group } = this.options;
+
+    if (group) {
+      return group;
+    }
 
     const appFilePath = path.resolve(this.context, 'app.json');
 

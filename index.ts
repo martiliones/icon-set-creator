@@ -58,8 +58,8 @@ program
   .option('-f, --adaptive-icon-foreground <foreground>', 'The image asset which will be used for the icon foreground of the adaptive icon')
 
   .option('-I, --ios', 'Generate icon set for ios')
-  .option('--group [group]', 'Group for ios')
-  .option('-d, --disable-change-icon', 'Disable changing the launcher icon for ios')
+  .option('--group <group>', 'Group for ios')
+  .option('-d, --disable-launcher-icon', 'Disable changing the launcher icon for ios')
   .option('-IPI, --image-path-ios', 'Image path for ios')
   .action((imagePath: string, options) => {
     if (minimist(process.argv.slice(3))._.length > 1) {
