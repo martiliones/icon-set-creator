@@ -86,6 +86,7 @@ export default class Creator {
       const androidIconCreator = new AndroidIconCreator(context, {
         flavor: options.flavor,
         android: options.android,
+        disableLauncherIcon: options.disableLauncherIcon,
       });
 
       await androidIconCreator.createAndroidIcons(imagePathAndroid);

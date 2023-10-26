@@ -51,6 +51,8 @@ program
   .command('create [image-path]')
   .description('Generate a new icon set for React Native project')
 
+  .option('-d, --disable-launcher-icon', 'Disable changing the launcher icon for iOS and Android')
+
   .option('-A, --android [icon-name]', 'Generate icon set for android')
   .option('-IPA, --image-path-android', 'Image path for android')
   .option('--flavor [flavor]', 'Flavor name')
@@ -59,7 +61,6 @@ program
 
   .option('-I, --ios', 'Generate icon set for ios')
   .option('--group <group>', 'Group for ios')
-  .option('-d, --disable-launcher-icon', 'Disable changing the launcher icon for ios')
   .option('-IPI, --image-path-ios', 'Image path for ios')
   .action((imagePath: string, options) => {
     if (minimist(process.argv.slice(3))._.length > 1) {
