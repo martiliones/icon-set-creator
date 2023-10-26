@@ -106,6 +106,23 @@ To display all of the options for the given command, run `iconset <command> --he
 
 ```bash
 $ iconset create --help
+
+Usage: index create [options] [image-path]
+
+Generate a new icon set for React Native project
+
+Options:
+  -d, --disable-launcher-icon                  Disable changing the launcher icon for iOS and Android
+  -A, --android [icon-name]                    Generate icon set for android
+  -IPA, --image-path-android                   Image path for android
+  --flavor [flavor]                            Flavor name
+  -b, --adaptive-icon-background <background>  The color (E.g. "#ffffff") or image asset (E.g. "assets/images/christmas-background.png") which will be
+                                               used to fill out the background of the adaptive icon.
+  -f, --adaptive-icon-foreground <foreground>  The image asset which will be used for the icon foreground of the adaptive icon
+  -I, --ios                                    Generate icon set for ios
+  --group <group>                              Group for ios
+  -IPI, --image-path-ios                       Image path for ios
+  -h, --help                                   display help for command
 ```
 
 <h3> Configuration files </h3>
@@ -139,6 +156,7 @@ module.exports = {
 <h4> iconset create </h4>
 
 - `imagePath` — The location of the icon image file which you want to use as the app launcher icon. e.g. `./assets/icon.png`
+- `disableLauncherIcon` - Generate only icons without changing manifest files
 - `android`/`ios` (optional): `true` — Override the default existing React-Native launcher icon for the platform specified, `false` — ignore making launcher icons for this platform, `icon_name` — this will generate a new launcher icons for the platform with the name you specify, without removing the old default existing React-Native launcher icon.
 - `imagePathAndroid` — The location of the icon image file specific for Android platform (optional — if not defined then the `imagePath` is used)
 - `imagePathIos` — The location of the icon image file specific for iOS platform (optional — if not defined then the `imagePath` is used)
