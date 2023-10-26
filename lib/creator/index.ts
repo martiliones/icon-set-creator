@@ -13,6 +13,8 @@ interface creatorOptions {
   flavor?: string;
   adaptiveIconBackground?: string;
   adaptiveIconForeground?: string;
+  group?: string;
+  disableLauncherIcon?: boolean;
 };
 
 export default class Creator {
@@ -84,6 +86,7 @@ export default class Creator {
       const androidIconCreator = new AndroidIconCreator(context, {
         flavor: options.flavor,
         android: options.android,
+        disableLauncherIcon: options.disableLauncherIcon,
       });
 
       await androidIconCreator.createAndroidIcons(imagePathAndroid);
@@ -101,6 +104,8 @@ export default class Creator {
       const iOSIconCreator = new IOSIconCreator(context, {
         ios: options.ios,
         flavor: options.flavor,
+        group: options.group,
+        disableLauncherIcon: options.disableLauncherIcon,
       });
 
       const imagePathIos = options.imagePathIos || options.imagePath;

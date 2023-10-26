@@ -24,6 +24,7 @@ import {
 interface AndroidCreatorOptions {
   flavor?: string;
   android?: any;
+  disableLauncherIcon?: boolean;
 }
 
 class AndroidIconCreator {
@@ -60,7 +61,9 @@ class AndroidIconCreator {
           return reject(err);
         }
 
-        await this.overwriteAndroidManifestIcon(iconName!);
+        if (!this.options.disableLauncherIcon) {
+          await this.overwriteAndroidManifestIcon(iconName!);
+        }
 
         for (const androidIcon of androidIcons) {
           const iconDirectory = path.resolve(androidResDirectory, androidIcon.directoryName);
